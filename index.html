@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Sorry 💛</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: url("sorry.jpg") no-repeat center center fixed;
+      background-size: cover;
+
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #111;
+      padding: 24px;
+    }
+
+    /* Layout: main content + side clocks */
+    .layout {
+      width: min(1100px, 95vw);
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1 1 650px;
+      max-width: 800px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.20);
+      border-radius: 16px;
+      padding: 18px;
+      backdrop-filter: blur(6px);
+    }
+
+    .clockPanel {
+      flex: 0 0 240px;
+      width: 240px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.20);
+      border-radius: 16px;
+      padding: 14px;
+      backdrop-filter: blur(6px);
+      text-align: left;
+    }
+
+    .clockTitle {
+      font-weight: 800;
+      margin: 0 0 10px 0;
+      font-size: 16px;
+    }
+
+    .clockRow {
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .clockRow:last-child { margin-bottom: 0; }
+
+    .place {
+      font-weight: 800;
+      margin: 0;
+      font-size: 14px;
+      color: #111;
+    }
+
+    .time {
+      font-size: 20px;
+      font-weight: 800;
+      margin: 6px 0 2px 0;
+      color: #111;
+    }
+
+    .date {
+      font-size: 12px;
+      margin: 0;
+      opacity: 0.95;
+      color: #111;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin: 10px 0 12px 0;
+    }
+
+    p {
+      font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+      opacity: 0.95;
+      margin: 0 0 18px 0;
+    }
+
+    .audio-table-wrapper {
+      margin-top: 16px;
+      overflow-x: auto;
+    }
+
+    .audio-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+    }
+
+    .audio-table th {
+      background: rgba(0,0,0,0.35);
+      padding: 10px;
+      font-size: 16px;
+      color: white;
+    }
+
+    .audio-table td {
+      padding: 10px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      color: #111;
+      font-weight: 700;
+    }
+
+    .audio-table tr:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    audio {
+      width: 180px;
+    }
+
+    .link {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.10);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .link:hover {
+      background: rgba(255,255,255,0.16);
+    }
+
+    h2 {
+      margin-top: 18px;
+      margin-bottom: 8px;
+      color: #111;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <!-- MAIN CONTENT -->
+    <div class="box">
+      <!-- This will be replaced by JS based on time -->
+      <h1 id="greeting">Good morning, Kavya ☀️</h1>
+      <p>I owe you an apology.</p>
+
+      <h2>This is me saying sorry to you in different languages 🎧</h2>
+
+      <div class="audio-table-wrapper">
+        <table class="audio-table">
+          <thead>
+            <tr>
+              <th>Language</th>
+              <th>Play</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>English 🇺🇸</td>
+              <td><audio controls><source src="English.m4a" type="audio/mp4"></audio></td>
+            </tr>
+
+            <tr>
+              <td>Nepali 🇳🇵</td>
+              <td><audio controls><source src="Nepali.m4a" type="audio/mp4"></audio></td>
+            </tr>
+
+            <tr>
+              <td>Japanese 🇯🇵</td>
+              <td><audio controls><source src="Japanese.m4a" type="audio/mp4"></audio></td>
+            </tr>
+
+            <tr>
+              <td>Maithali</td>
+              <td><audio controls><source src="Maithali.m4a" type="audio/mp4"></audio></td>
+            </tr>
+
+            <tr>
+              <td>Russian 🇷🇺</td>
+              <td><audio controls><source src="Russian.m4a" type="audio/mp4"></audio></td>
+            </tr>
+
+            <tr>
+              <td>Newari 🇳W</td>
+              <td><audio controls><source src="Newari.m4a" type="audio/mp4"></audio></td>
+            </tr>
+
+            <tr>
+              <td>Hindi 🇮🇳</td>
+              <td><audio controls><source src="Hindi.m4a" type="audio/mp4"></audio></td>
+            </tr>
+
+            <tr>
+              <td>Spanish 🇪🇸</td>
+              <td><audio controls><source src="Spanish.m4a" type="audio/mp4"></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <a class="link" href="page2.html">Click here to continue →</a>
+      </div>
+    </div>
+
+    <!-- SIDE CLOCKS -->
+    <div class="clockPanel">
+      <div class="clockTitle">Time right now ⏰</div>
+
+      <div class="clockRow">
+        <p class="place">Nepal (Kathmandu) 🇳🇵</p>
+        <div class="time" id="npTime">--:--:--</div>
+        <p class="date" id="npDate">---</p>
+      </div>
+
+      <div class="clockRow">
+        <p class="place">Texas (Central) 🇺🇸</p>
+        <div class="time" id="txTime">--:--:--</div>
+        <p class="date" id="txDate">---</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Greeting changes based on TEXAS (Central Time) since you're in Texas
+    function getGreetingByHour(hour) {
+      if (hour >= 5 && hour < 12) return "Good morning";
+      if (hour >= 12 && hour < 17) return "Good afternoon";
+      if (hour >= 17 && hour < 22) return "Good evening";
+      return "Good night";
+    }
+
+    function updateClocksAndGreeting() {
+      const name = "Kavya";
+
+      // Nepal time
+      const npNow = new Date();
+      const npTimeStr = npNow.toLocaleTimeString("en-US", {
+        timeZone: "Asia/Kathmandu",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      });
+      const npDateStr = npNow.toLocaleDateString("en-US", {
+        timeZone: "Asia/Kathmandu",
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+        day: "2-digit"
+      });
+
+      // Texas time (Central)
+      const txNow = new Date();
+      const txTimeStr = txNow.toLocaleTimeString("en-US", {
+        timeZone: "America/Chicago",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      });
+      const txDateStr = txNow.toLocaleDateString("en-US", {
+        timeZone: "America/Chicago",
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+        day: "2-digit"
+      });
+
+      // Update clock UI
+      document.getElementById("npTime").textContent = npTimeStr;
+      document.getElementById("npDate").textContent = npDateStr;
+
+      document.getElementById("txTime").textContent = txTimeStr;
+      document.getElementById("txDate").textContent = txDateStr;
+
+      // Greeting based on Texas hour
+      const txHour = Number(txNow.toLocaleString("en-US", {
+        timeZone: "America/Chicago",
+        hour: "2-digit",
+        hour12: false
+      }));
+
+      const greeting = getGreetingByHour(txHour);
+      const emoji = (greeting === "Good morning") ? "☀️"
+                   : (greeting === "Good afternoon") ? "🌤️"
+                   : (greeting === "Good evening") ? "🌙"
+                   : "🌙";
+
+      document.getElementById("greeting").textContent = `${greeting}, ${name} ${emoji}`;
+    }
+
+    // Update once immediately and then every second
+    updateClocksAndGreeting();
+    setInterval(updateClocksAndGreeting, 1000);
+  </script>
+</body>
+</html>

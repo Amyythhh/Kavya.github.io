@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Thank You ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #7c5cff, #ff9a9e);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+}
+
+.box {
+  background: rgba(255,255,255,0.12);
+  padding: 35px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  max-width: 450px;
+}
+
+button {
+  margin-top: 18px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  background: white;
+  color: #7c5cff;
+  cursor: pointer;
+}
+
+/* Video popup */
+#videoContainer {
+  display: none;
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.75);
+
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+video {
+  width: min(90vw, 600px);
+  border-radius: 15px;
+}
+
+/* Letter popup */
+#letterContainer {
+  display: none;
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.75);
+
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+#letterBox {
+  background: #fff8dc;
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  color: #333;
+  font-family: 'Georgia', serif;
+  line-height: 1.8;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>Thank you 🥹💖</h1>
+
+  <p>
+    Thank you for forgiving me.<br>
+    I promise to do better every day.
+  </p>
+
+  <button onclick="playVideo()">Play my thank you message 🎥</button>
+  <button onclick="showLetter()">Read my letter 💌</button>
+</div>
+
+<!-- Hidden video popup -->
+<div id="videoContainer" onclick="closeVideo()">
+  <video id="myVideo" controls>
+    <source src="thankyou.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- Hidden letter popup -->
+<div id="letterContainer" onclick="closeLetter()">
+  <div id="letterBox" onclick="event.stopPropagation()">
+    <h2>A Letter for You 💝</h2>
+    <p>
+      My dearest,<br><br>
+      
+      How do I even begin to express the depth of my gratitude? Your forgiveness is a gift I will and I have cherished forever. I apologize for my hurtful remark. I was angry and I didn’t consider how they might affect you, and I promise to be more considerate in the future.<br><br>
+      Thank you for believing in us, in me, and in the possibility of a better tomorrow.<br><br>
+      
+      All my love,<br>
+      With deepest gratitude 🤍
+    </p>
+  </div>
+</div>
+
+<script>
+function playVideo() {
+  const container = document.getElementById("videoContainer");
+  const video = document.getElementById("myVideo");
+
+  container.style.display = "flex";
+  video.play();
+}
+
+function closeVideo() {
+  const container = document.getElementById("videoContainer");
+  const video = document.getElementById("myVideo");
+
+  video.pause();
+  video.currentTime = 0;
+  container.style.display = "none";
+}
+
+function showLetter() {
+  const container = document.getElementById("letterContainer");
+  container.style.display = "flex";
+}
+
+function closeLetter() {
+  const container = document.getElementById("letterContainer");
+  container.style.display = "none";
+}
+</script>
+
+</body>
+</html>
